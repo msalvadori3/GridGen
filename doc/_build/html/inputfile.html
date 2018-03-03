@@ -1,0 +1,188 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Input File &#8212; GridGen  documentation</title>
+    
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Code development" href="devel.html" />
+    <link rel="prev" title="Setup" href="setup.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="devel.html" title="Code development"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="setup.html" title="Setup"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GridGen  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Input File</a><ul>
+<li><a class="reference internal" href="#structure-of-the-geometry-module">Structure of the Geometry Module</a></li>
+<li><a class="reference internal" href="#structure-of-setup-module">Structure of Setup Module</a></li>
+<li><a class="reference internal" href="#structure-of-postprocessing-modules">Structure of Postprocessing Modules</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="setup.html"
+                        title="previous chapter">Setup</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="devel.html"
+                        title="next chapter">Code development</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/inputfile.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="input-file">
+<span id="inputfile"></span><h1>Input File<a class="headerlink" href="#input-file" title="Permalink to this headline">¶</a></h1>
+<p>The input file is central location for setting any and all parameters for all the features in <a href="#id1"><span class="problematic" id="id2">|GridGen|</span></a>. Depending on the type of operation being performed on <a href="#id3"><span class="problematic" id="id4">|GridGen|</span></a>, the relevant input options are set in the input file.</p>
+<div class="section" id="structure-of-the-geometry-module">
+<span id="str-geometry"></span><h2>Structure of the Geometry Module<a class="headerlink" href="#structure-of-the-geometry-module" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">geometry</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">x1</span><span class="o">&gt;-</span><span class="mf">0.8</span><span class="o">&lt;/</span><span class="n">x1</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">y1</span><span class="o">&gt;</span><span class="mf">0.0</span><span class="o">&lt;/</span><span class="n">y1</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">x2</span><span class="o">&gt;</span><span class="mf">1.8</span><span class="o">&lt;/</span><span class="n">x2</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">y2</span><span class="o">&gt;</span><span class="mf">0.0</span><span class="o">&lt;/</span><span class="n">y2</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">x3</span><span class="o">&gt;-</span><span class="mf">0.8</span><span class="o">&lt;/</span><span class="n">x3</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">y3</span><span class="o">&gt;</span><span class="mf">1.0</span><span class="o">&lt;/</span><span class="n">y3</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">x4</span><span class="o">&gt;</span><span class="mf">1.8</span><span class="o">&lt;/</span><span class="n">x4</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">y4</span><span class="o">&gt;</span><span class="mf">1.0</span><span class="o">&lt;/</span><span class="n">y4</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">FEsize</span><span class="o">&gt;</span><span class="mi">11</span><span class="o">&lt;/</span><span class="n">FEsize</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">DCsize</span><span class="o">&gt;</span><span class="mi">11</span><span class="o">&lt;/</span><span class="n">DCsize</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">Geosize</span><span class="o">&gt;</span><span class="mi">21</span><span class="o">&lt;/</span><span class="n">Geosize</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">Geoptx1</span><span class="o">&gt;</span><span class="mf">0.0</span><span class="o">&lt;/</span><span class="n">Geoptx1</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">Geopty1</span><span class="o">&gt;</span><span class="mf">0.0</span><span class="o">&lt;/</span><span class="n">Geopty1</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">Geoptx2</span><span class="o">&gt;</span><span class="mf">1.0</span><span class="o">&lt;/</span><span class="n">Geoptx2</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">Geopty2</span><span class="o">&gt;</span><span class="mf">0.0</span><span class="o">&lt;/</span><span class="n">Geopty2</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">imax</span><span class="o">&gt;</span><span class="mi">41</span><span class="o">&lt;/</span><span class="n">imax</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">jmax</span><span class="o">&gt;</span><span class="mi">19</span><span class="o">&lt;/</span><span class="n">jmax</span><span class="o">&gt;</span>
+ <span class="o">&lt;/</span><span class="n">geometry</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="structure-of-setup-module">
+<span id="str-setup"></span><h2>Structure of Setup Module<a class="headerlink" href="#structure-of-setup-module" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">setup</span><span class="o">&gt;</span>
+   <span class="o">&lt;</span><span class="n">Project</span><span class="o">&gt;</span><span class="mi">2</span><span class="n">D_Grid_Generator</span><span class="o">&lt;/</span><span class="n">Project</span><span class="o">&gt;</span>
+   <span class="o">&lt;</span><span class="n">nmax</span><span class="o">&gt;</span><span class="mi">500</span><span class="o">&lt;/</span><span class="n">nmax</span><span class="o">&gt;</span>
+   <span class="o">&lt;</span><span class="n">iControl</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">iControl</span><span class="o">&gt;</span>
+   <span class="o">&lt;</span><span class="n">Cy</span><span class="o">&gt;</span><span class="mf">2.0</span><span class="o">&lt;/</span><span class="n">Cy</span><span class="o">&gt;</span>
+   <span class="o">&lt;</span><span class="n">RMSres</span><span class="o">&gt;</span><span class="mf">1.0e-6</span><span class="o">&lt;/</span><span class="n">RMSres</span><span class="o">&gt;</span>
+ <span class="o">&lt;/</span><span class="n">setup</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="structure-of-postprocessing-modules">
+<span id="str-post"></span><h2>Structure of Postprocessing Modules<a class="headerlink" href="#structure-of-postprocessing-modules" title="Permalink to this headline">¶</a></h2>
+<p id="plot-input"><a href="#id5"><span class="problematic" id="id6">|GridGen|</span></a> also allows the user to graphically visualize the results through the use of graphs and contours. Inputs to this plotting utility are also provided through the input file. The relevant block for this utility is shown below, and linked to the dedicated plotting utility page.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">PostProcessing</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">plot</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">iPost</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">iPost</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">Method</span><span class="o">&gt;</span><span class="n">TecPlot</span><span class="o">&lt;/</span><span class="n">Method</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">files</span><span class="o">&gt;</span><span class="n">rmslog</span><span class="o">.</span><span class="n">dat</span><span class="o">&lt;/</span><span class="n">files</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">style</span><span class="o">&gt;</span><span class="n">k</span> <span class="o">+</span><span class="n">r</span><span class="o">&lt;/</span><span class="n">style</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">label</span><span class="o">&gt;</span><span class="n">Grid</span><span class="o">&lt;/</span><span class="n">label</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">LegendFontSize</span><span class="o">&gt;</span><span class="mi">16</span><span class="o">&lt;/</span><span class="n">LegendFontSize</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">FigureSize</span><span class="o">&gt;</span><span class="mi">10</span> <span class="mi">7</span><span class="o">&lt;/</span><span class="n">FigureSize</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">AxisLabelSize</span><span class="o">&gt;</span><span class="mi">21</span><span class="o">&lt;/</span><span class="n">AxisLabelSize</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">AxisTitleSize</span><span class="o">&gt;</span><span class="mi">22</span><span class="o">&lt;/</span><span class="n">AxisTitleSize</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">XTickSize</span><span class="o">&gt;</span><span class="mi">23</span><span class="o">&lt;/</span><span class="n">XTickSize</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">YTickSize</span><span class="o">&gt;</span><span class="mi">24</span><span class="o">&lt;/</span><span class="n">YTickSize</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">plot</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">PostProcessing</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="devel.html" title="Code development"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="setup.html" title="Setup"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GridGen  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Marc Salvadori.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.1.
+    </div>
+  </body>
+</html>

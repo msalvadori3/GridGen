@@ -1,0 +1,266 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Code development &#8212; GridGen  documentation</title>
+    
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="GridPy" href="gridpy.html" />
+    <link rel="prev" title="Input File" href="inputfile.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="gridpy.html" title="GridPy"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="inputfile.html" title="Input File"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GridGen  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Code development</a><ul>
+<li><a class="reference internal" href="#gridgen-code-summary">GridGen Code summary</a></li>
+<li><a class="reference internal" href="#details-of-gridgen-development">Details of GridGen development</a><ul>
+<li><a class="reference internal" href="#creation-of-algebraic-grid-points">Creation of algebraic grid points</a></li>
+<li><a class="reference internal" href="#creaction-of-elliptic-grid-points">Creaction of elliptic grid points</a></li>
+<li><a class="reference internal" href="#rms-residual">RMS residual</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="inputfile.html"
+                        title="previous chapter">Input File</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="gridpy.html"
+                        title="next chapter">GridPy</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/devel.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="code-development">
+<h1>Code development<a class="headerlink" href="#code-development" title="Permalink to this headline">¶</a></h1>
+<p>The current project is for developing elliptic grid generator in 2-dimensional domain. Hereafter, the program developed in this project is called ‘GridGen’.</p>
+<div class="section" id="gridgen-code-summary">
+<h2>GridGen Code summary<a class="headerlink" href="#gridgen-code-summary" title="Permalink to this headline">¶</a></h2>
+<p>The present project is to make a grid-generator for 2-D computational domain around a modified NACA 00xx series airfoil in a channel.</p>
+<p>The source code contains the following directories:</p>
+<ul class="simple">
+<li>io - input/output related routines</li>
+<li>main - main program driver</li>
+<li>math - thomas algorithm</li>
+<li>modules - main grid generator solver routines</li>
+<li>utils - list of useful FORTRAN utilities used within the program</li>
+<li>gridpy - python wrapper for gridgen main program</li>
+</ul>
+<blockquote>
+<div>Also a ‘CMakeLists.txt’ file is also included for cmake compiling.</div></blockquote>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ cd GridGen/src/
+$ ls
+$ CMakeLists.txt  io  main math modules utils gridpy
+</pre></div>
+</div>
+<p>The <strong>io</strong> folder has <strong>io.F90</strong> file which contains <strong>ReadInput(inputData)</strong> subroutine. It also includes <strong>input_file_xml</strong> which describes the structure of the user run-time input file located in the main ‘src’ directory, and <strong>output.F90</strong> for storing data in bothb Tecplot and Python format.</p>
+<p>The <strong>main</strong> folder is only used for containing the code driver file. The main routines is run by <strong>gridgen.F90</strong> which calls important subroutines from the rest of folders.</p>
+</div>
+<div class="section" id="details-of-gridgen-development">
+<h2>Details of GridGen development<a class="headerlink" href="#details-of-gridgen-development" title="Permalink to this headline">¶</a></h2>
+<p>The GridGen code is made for creating 2-D computational domain with pre-described points value along the 2D airfoil geometry. The schematic below shows the flow chart of how the GridGen code runs.</p>
+<p>The source code shown below is <strong>gridgen.F90</strong> and it calls skeletal subroutines for generating grid structure. The main features of the main code is to (1) read input file, (2) make initialized variable arrays, (3) set initial algebraic grid points, (4) create elliptic grid points, and (5) finally write output files:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">main</span>
+
+      <span class="n">USE</span> <span class="n">xml_data_input_file</span>
+      <span class="n">USE</span> <span class="n">GridSetup_m</span><span class="p">,</span><span class="n">ONLY</span><span class="p">:</span><span class="n">InitGrid</span><span class="p">,</span><span class="n">GridInternal</span><span class="p">,</span><span class="n">EndVars</span>
+      <span class="n">USE</span> <span class="n">parameters_m</span><span class="p">,</span><span class="n">ONLY</span><span class="p">:</span><span class="n">wp</span>
+      <span class="n">USE</span> <span class="n">SimVars_m</span><span class="p">,</span><span class="n">ONLY</span><span class="p">:</span><span class="n">fileLength</span>
+      <span class="n">USE</span> <span class="n">GridTransform_m</span><span class="p">,</span><span class="n">ONLY</span><span class="p">:</span> <span class="n">InitArrays</span><span class="p">,</span><span class="n">CalcCoeff</span><span class="p">,</span><span class="n">PhiPsi</span><span class="p">,</span><span class="n">TriDiag</span><span class="p">,</span><span class="n">Jacobian</span><span class="p">,</span><span class="o">&amp;</span>
+              <span class="n">EndArrays</span>
+      <span class="n">USE</span> <span class="n">output_m</span><span class="p">,</span><span class="n">ONLY</span><span class="p">:</span><span class="n">WritePlotFile</span><span class="p">,</span><span class="n">WriteRMS</span>
+
+      <span class="n">IMPLICIT</span> <span class="n">NONE</span>
+
+      <span class="n">TYPE</span><span class="p">(</span><span class="n">input_type_t</span><span class="p">)</span> <span class="p">::</span> <span class="n">inputData</span>
+      <span class="n">CHARACTER</span><span class="p">(</span><span class="n">LEN</span><span class="o">=</span><span class="n">fileLength</span><span class="p">)</span> <span class="p">::</span><span class="n">output</span><span class="o">=</span> <span class="s1">&#39;none&#39;</span>
+      <span class="n">CHARACTER</span><span class="p">(</span><span class="n">LEN</span><span class="o">=</span><span class="n">fileLength</span><span class="p">)</span> <span class="p">::</span> <span class="n">rmsout</span> <span class="o">=</span> <span class="s1">&#39;rmslog.dat&#39;</span>
+      <span class="n">INTEGER</span> <span class="p">::</span> <span class="n">i</span>
+      <span class="n">REAL</span><span class="p">(</span><span class="n">KIND</span><span class="o">=</span><span class="n">wp</span><span class="p">)</span> <span class="p">::</span> <span class="n">rms</span>
+
+      <span class="n">CALL</span> <span class="n">InitGrid</span><span class="p">(</span><span class="n">inputData</span><span class="p">)</span>
+      <span class="n">CALL</span> <span class="n">InitArrays</span>
+      <span class="n">CALL</span> <span class="n">Jacobian</span>
+      <span class="n">CALL</span> <span class="n">WritePlotFile</span><span class="p">(</span><span class="s1">&#39;InitGrid&#39;</span><span class="p">,</span><span class="s1">&#39;&quot;x&quot;,&quot;y&quot;,&quot;Jacobian&quot;,&quot;Phi&quot;,&quot;Psi&quot;&#39;</span><span class="p">,</span><span class="n">inputData</span><span class="p">)</span>
+      <span class="n">IF</span> <span class="p">(</span><span class="n">inputData</span><span class="o">%</span><span class="n">setup</span><span class="o">%</span><span class="n">iControl</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="n">CALL</span> <span class="n">PhiPsi</span>
+      <span class="n">WRITE</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span> <span class="s1">&#39;Solving Elliptical Grid...............&#39;</span>
+      <span class="n">DO</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">inputData</span><span class="o">%</span><span class="n">setup</span><span class="o">%</span><span class="n">nmax</span>
+                <span class="n">WRITE</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span> <span class="s1">&#39;IT = &#39;</span><span class="p">,</span><span class="n">i</span>
+                <span class="n">CALL</span> <span class="n">CalcCoeff</span>
+                <span class="n">CALL</span> <span class="n">TriDiag</span><span class="p">(</span><span class="n">rms</span><span class="p">)</span>
+                <span class="n">CALL</span> <span class="n">WriteRMS</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">rms</span><span class="p">,</span><span class="n">rmsout</span><span class="p">)</span>
+                <span class="n">IF</span> <span class="p">(</span><span class="n">rms</span> <span class="o">&lt;=</span> <span class="n">inputData</span><span class="o">%</span><span class="n">setup</span><span class="o">%</span><span class="n">RMSres</span><span class="p">)</span> <span class="n">EXIT</span>
+      <span class="n">ENDDO</span>
+      <span class="n">CALL</span> <span class="n">Jacobian</span>
+      <span class="n">CALL</span> <span class="n">WritePlotFile</span><span class="p">(</span><span class="n">output</span><span class="p">,</span><span class="s1">&#39;&quot;x&quot;,&quot;y&quot;,&quot;Jacobian&quot;,&quot;Phi&quot;,&quot;Psi&quot;&#39;</span><span class="p">,</span><span class="n">inputData</span><span class="p">)</span>
+      <span class="n">CALL</span> <span class="n">EndArrays</span>
+      <span class="n">CALL</span> <span class="n">EndVars</span>
+
+<span class="n">END</span> <span class="n">PROGRAM</span> <span class="n">main</span>
+</pre></div>
+</div>
+<div class="section" id="creation-of-algebraic-grid-points">
+<h3>Creation of algebraic grid points<a class="headerlink" href="#creation-of-algebraic-grid-points" title="Permalink to this headline">¶</a></h3>
+<p>The code starts to run by reading the important input parameters defined by the user in the <strong>input_file.xml</strong> file. The input data file first contains all the details geometrical description of our grid points. Then the code reads airfoil geometry data from this input file, which provides the bottom edge points of the domain. The input file also contains four vertex points in <span class="math">\((x,y)\)</span> coordinates. Thus those points forms a 2-dimensional surface. Based on these boundary grid points, the code runs with Algebratic grid generating subroutine and gives initial conditions for elliptic solution for grid transformation.</p>
+<p>The <strong>gridgen.F90</strong> file first refers to <strong>InitGrid</strong> subroutine defined in <strong>GridSetup.F90</strong> file. The main function of this routine is to call again multiple subroutines defined in same file. The subroutine definition shown below summarizes the how the code runs for the grid initialization:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SUBROUTINE</span> <span class="n">InitGrid</span><span class="p">(</span><span class="n">inputData</span><span class="p">)</span>
+
+        <span class="n">USE</span> <span class="n">xml_data_input_file</span>
+        <span class="n">USE</span> <span class="n">io_m</span><span class="p">,</span> <span class="n">ONLY</span><span class="p">:</span> <span class="n">ReadInput</span>
+
+        <span class="n">IMPLICIT</span> <span class="n">NONE</span>
+
+        <span class="n">TYPE</span><span class="p">(</span><span class="n">input_type_t</span><span class="p">)</span> <span class="p">::</span> <span class="n">inputData</span>
+
+        <span class="n">CALL</span> <span class="n">ReadInput</span><span class="p">(</span><span class="n">inputData</span><span class="p">)</span>
+        <span class="n">CALL</span> <span class="n">InitVars</span><span class="p">()</span>
+        <span class="n">CALL</span> <span class="n">BottomEdge</span><span class="p">()</span>
+        <span class="n">CALL</span> <span class="n">SetBCs</span><span class="p">()</span>
+        <span class="n">CALL</span> <span class="n">GridInternal</span><span class="p">()</span>
+
+<span class="n">END</span> <span class="n">SUBROUTINE</span> <span class="n">InitGrid</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><strong>ReadGridInput</strong>: Reads  user defined variables and parameters for grid configuration.</li>
+<li><strong>InitVars</strong>: Initialize the single- and multi-dimensional arrays and set their size based on the input parameters.</li>
+<li><strong>BottomEdge</strong>: Generate point values for airfoil geometry.</li>
+<li><strong>SetBcs</strong>: Generate grid points along 4 edges of the computational domain.</li>
+<li><strong>GridInternal</strong>: Based on grid points along the edges and surfaces, this routine will create interior grid points that are aligned with user-defined grid point interpolations.</li>
+</ul>
+</div>
+<div class="section" id="creaction-of-elliptic-grid-points">
+<h3>Creaction of elliptic grid points<a class="headerlink" href="#creaction-of-elliptic-grid-points" title="Permalink to this headline">¶</a></h3>
+<p>In order to determine the elliptic grid points with the pre-specified boundary points, the following Poisson equations, which is given in previous <strong>Project description</strong> section, have to be resolved numerically. The coefficients of the equations can be determined by:</p>
+<div class="math">
+\[ \begin{align}\begin{aligned}{\alpha}=x_{\eta}^{2} + y_{\eta}^{2}\\{\beta}=x_{\xi}x_{\eta} + y_{\xi}y_{\eta}\\{\gamma}=x_{\xi}^{2} + y_{\xi}^{2}\end{aligned}\end{align} \]</div>
+<p>Then, applying finite difference approximation to the governing equations can be transformed into the linear system of equations. The arranged matrix form of equations shown below can be solved for unknown implicitly at every pseudo-time level. At every time loop, the code updates the coefficients composed of <span class="math">\(\phi\)</span> and <span class="math">\(\psi\)</span>, and adjacent points. The detailed relations of each coefficients are not shown here for brevity.</p>
+<div class="math">
+\[ \begin{align}\begin{aligned}a_{i,j} x_{i-1,j}^{n+1} + b_{i,j} x_{i,j}^{n+1} + c_{i,j} x_{i+1,j}^{n+1} = d_{i,j}\\e_{i,j} y_{i-1,j}^{n+1} + f_{i,j} y_{i,j}^{n+1} + g_{i,j} y_{i+1,j}^{n+1} = h_{i,j}\end{aligned}\end{align} \]</div>
+<p>Above equations can be numerically evaluated by the following descritized expressions:</p>
+<div class="math">
+\[ \begin{align}\begin{aligned}a_{i,j} = e_{i,j} = {\alpha}_{\text{ }i,j}^{n}  \left(1 - \frac{\phi_{i,j}^{n}}{2} \right)\\b_{i,j} = f_{i,j} = -2 \left({\alpha}_{\text{ }i,j} + {\gamma}_{\text{ }i,j} \right)\\c_{i,j} = g_{i,j} = {\alpha}_{\text{ }i,j}^{n}  \left(1 + \frac{\phi_{i,j}^{n}}{2} \right)\\e_{i,j} = \frac{{\beta}_{\text{ }i,j}^{n}}{2} \left(x_{i+1,j}^{n} - x_{i+1,j-1}^{n+1} - x_{i-1,j+1}^{n} - x_{i-1,j-1}^{n+1} \right) - {\gamma}_{\text{ }i,j}^{n} \left( x_{i,j+1}^{n} + x_{i,j-1}^{n+1} \right) - \frac{{\beta}_{\text{ }i,j}^{n}}{2} \psi_{i,j}^{n} \left( x_{i,j+1}^{n} - x_{i,j-1}^{n+1} \right)\\h_{i,j} = \frac{{\beta}_{\text{ }i,j}^{n}}{2} \left(y_{i+1,j}^{n} - y_{i+1,j-1}^{n+1} - y_{i-1,j+1}^{n} - y_{i-1,j-1}^{n+1} \right) - {\gamma}_{\text{ }i,j}^{n} \left( y_{i,j+1}^{n} + y_{i,j-1}^{n+1} \right) - \frac{{\beta}_{\text{ }i,j}^{n}}{2} \psi_{i,j}^{n} \left( y_{i,j+1}^{n} - y_{i,j-1}^{n+1} \right)\end{aligned}\end{align} \]</div>
+<p>where <span class="math">\(n\)</span> and <span class="math">\(n+1\)</span> indicate pseudo time index. Thus above equations will update grid point coordinates for <span class="math">\(n+1\)</span> time level by referring to already resolved <span class="math">\(n\)</span> time level solution. Note that the pseudo time looping goes along the successive <span class="math">\(j\)</span>-constant lines. Therefore, when writing the code, time level index in above equations was not considered as a separate program variable because <span class="math">\(j-1\)</span> constant line is already updated in the previous loop.</p>
+<p>The expressions above are only evaluted in the interior grid points. The points on the boundaries are evaluated seprately by applying given solutions as problem handout.</p>
+<p>Once initial algebraic grid points are created, the code is ready to make elliptic grid points with some control terms in terms of <span class="math">\(\phi\)</span> and <span class="math">\(\psi\)</span>. <strong>gridgen.F90</strong> file contains the necessary subroutine calls to evaluate the elipptical grid  as shown below:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">IF</span> <span class="p">(</span><span class="n">inputData</span><span class="o">%</span><span class="n">setup</span><span class="o">%</span><span class="n">iControl</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="n">CALL</span> <span class="n">PhiPsi</span>
+<span class="n">WRITE</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span> <span class="s1">&#39;Solving Elliptical Grid...............&#39;</span>
+<span class="n">DO</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">inputData</span><span class="o">%</span><span class="n">setup</span><span class="o">%</span><span class="n">nmax</span>
+          <span class="n">WRITE</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span> <span class="s1">&#39;IT = &#39;</span><span class="p">,</span><span class="n">i</span>
+          <span class="n">CALL</span> <span class="n">CalcCoeff</span>
+          <span class="n">CALL</span> <span class="n">TriDiag</span><span class="p">(</span><span class="n">rms</span><span class="p">)</span>
+          <span class="n">CALL</span> <span class="n">WriteRMS</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">rms</span><span class="p">,</span><span class="n">rmsout</span><span class="p">)</span>
+          <span class="n">IF</span> <span class="p">(</span><span class="n">rms</span> <span class="o">&lt;=</span> <span class="n">inputData</span><span class="o">%</span><span class="n">setup</span><span class="o">%</span><span class="n">RMSres</span><span class="p">)</span> <span class="n">EXIT</span>
+<span class="n">ENDDO</span>
+</pre></div>
+</div>
+<p>Before going into the main loop for solving poisson equations, the code calculate control terms with <span class="math">\(\phi\)</span> and <span class="math">\(\psi\)</span> only if the user defines the option in the <strong>input_file.xml</strong> file. Even though the assigned project made an assumption of linear interpolated distribution of <span class="math">\(\phi\)</span> and <span class="math">\(\psi\)</span> at interior points, the GridGen code is designed to allow <span class="math">\(\phi\)</span> and <span class="math">\(\psi\)</span> be weighted in <span class="math">\(j\)</span> and <span class="math">\(i\)</span> directions, respectively. This effect is made by the grid stretching formula.</p>
+<p>Here, main DO-loop routine goes with setup of coefficients of governing equations and Thomas loop. The Thomas loop operates with line Gauss-Siedel method for resolving unknown variables, <span class="math">\(x\)</span> and <span class="math">\(y\)</span>, with tri-diagonal matrix of coefficients of finite difference approximation equation in a <span class="math">\(j\)</span> = constant line.</p>
+</div>
+<div class="section" id="rms-residual">
+<h3>RMS residual<a class="headerlink" href="#rms-residual" title="Permalink to this headline">¶</a></h3>
+<p>In order to avoid infinite time-looping for the Thomas method, the GridGen code employs the following definition of RMS residual based on the new (<span class="math">\(n+1\)</span>) and old(<span class="math">\(n\)</span>) values of grid point coordinates.</p>
+<div class="math">
+\[\text{RMS}^{n} = \sqrt{\frac{1}{N} \sum_{i=2}^{imax-1} \sum_{jmax-1}^{j=2} \left[\left(x_{i,j}^{n+1} - x_{i,j}^{n} \right)^{2} + \left(y_{i,j}^{n+1} - y_{i,j}^{n} \right)^{2} \right]}\]</div>
+<p>where <span class="math">\(N = 2x(\text{imax}-2) x (\text{jmax}-2)\)</span> and the RMS criterion is user-specified as as small number or by default it is set as: <span class="math">\(1\text{x}10^{-6}\)</span>. In this code, the convergend is assumed to be achieved when RMS residual is less than the RMS criterion.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="gridpy.html" title="GridPy"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="inputfile.html" title="Input File"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GridGen  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Marc Salvadori.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.1.
+    </div>
+  </body>
+</html>

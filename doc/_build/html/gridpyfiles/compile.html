@@ -1,0 +1,171 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Compilation Options &#8212; GridGen  documentation</title>
+    
+    <link rel="stylesheet" href="../_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Plotting Utility" href="plot.html" />
+    <link rel="prev" title="GridPy" href="../gridpy.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="plot.html" title="Plotting Utility"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../gridpy.html" title="GridPy"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GridGen  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../gridpy.html" accesskey="U">GridPy</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Compilation Options</a><ul>
+<li><a class="reference internal" href="#configure">Configure</a></li>
+<li><a class="reference internal" href="#compile">Compile</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#setting-the-path">Setting the path</a></li>
+<li><a class="reference internal" href="#cleaning-commands">Cleaning commands</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../gridpy.html"
+                        title="previous chapter">GridPy</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="plot.html"
+                        title="next chapter">Plotting Utility</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/gridpyfiles/compile.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="compilation-options">
+<h1>Compilation Options<a class="headerlink" href="#compilation-options" title="Permalink to this headline">¶</a></h1>
+<p><a href="#id1"><span class="problematic" id="id2">|GridGen|</span></a> has several builtin compilation options, that can be accessed through the command <strong class="command">./setup.py -e</strong> and the  utilities that can be accessed using <strong class="command">./setup.py -u</strong>. These are described here.</p>
+<div class="section" id="configure">
+<h2>Configure<a class="headerlink" href="#configure" title="Permalink to this headline">¶</a></h2>
+<p>The default method for compiling <a href="#id3"><span class="problematic" id="id4">|GridGen|</span></a> from scratch is using the command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ ./setup.py -e configure gridgen
+</pre></div>
+</div>
+<p>This generates a CCMake window with configuration options that can be chosen by the user. Refer to the <a class="reference internal" href="../setup.html#compilation"><span class="std std-ref">compilation section</span></a> of the <a class="reference internal" href="../setup.html#setup-gridgen"><span class="std std-ref">|GridGen| Setup page</span></a> for details on using this method.</p>
+</div>
+<div class="section" id="compile">
+<h2>Compile<a class="headerlink" href="#compile" title="Permalink to this headline">¶</a></h2>
+<p>This option should be used only if <a href="#id5"><span class="problematic" id="id6">|GridGen|</span></a> has been configured first (using <code class="docutils literal"><span class="pre">-e</span> <span class="pre">configure</span></code>). This recompiles the code with any changes, while retaining the build directory and related objects. It can be executed using the command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ ./setup.py -e compile gridgen
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="setting-the-path">
+<h1>Setting the path<a class="headerlink" href="#setting-the-path" title="Permalink to this headline">¶</a></h1>
+<p><a href="#id7"><span class="problematic" id="id8">|GridGen|</span></a> requires the path to the working directory be set every time a run is executed from scratch (i.e. after clearing all the compilations). The <a href="#id9"><span class="problematic" id="id10">|GridGen|</span></a> executable <code class="docutils literal"><span class="pre">grid.x</span></code> will not run without this path set. To set the path, compile/configure <a href="#id11"><span class="problematic" id="id12">|GridGen|</span></a> using any of the options, and then run:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ ./setup.py -u set_path
+</pre></div>
+</div>
+</div>
+<div class="section" id="cleaning-commands">
+<h1>Cleaning commands<a class="headerlink" href="#cleaning-commands" title="Permalink to this headline">¶</a></h1>
+<p>After completion of a simulation, or before running a fresh simulation, <a href="#id13"><span class="problematic" id="id14">|GridGen|</span></a> can be cleared of compiled objects, results and other files. There are three variants to clean <a href="#id15"><span class="problematic" id="id16">|GridGen|</span></a>. The first is to perform a complete clean, which removes the build directories, the executables and any generated results. This can be accomplished by running:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ ./setup.py -u clean heavy
+</pre></div>
+</div>
+<p>On the other hand, the build directories and executables can be retained while deleting only the results by running the command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ ./setup.py -u clean results
+</pre></div>
+</div>
+<p>The last variant is where the build directories alone are cleared, retaining the results and the executables, which is done using the command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ ./setup.py -u clean
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="plot.html" title="Plotting Utility"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../gridpy.html" title="GridPy"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GridGen  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../gridpy.html" >GridPy</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Marc Salvadori.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.1.
+    </div>
+  </body>
+</html>

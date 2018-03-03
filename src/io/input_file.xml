@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<template>
+   <options strict="no" dynamicstrings="no" rootname="input_file"/>
+   <typedef name="geometry_t">
+      <component name="x1" type="double"    default="-0.8"/>
+      <component name="y1" type="double"    default="0.0"/>
+      <component name="x2" type="double"    default="1.8"/>
+      <component name="y2" type="double"    default="0.0"/>
+			<component name="x3" type="double"    default="-0.8"/>
+			<component name="y3" type="double"    default="1.0"/>
+			<component name="x4" type="double"    default="1.8"/>
+			<component name="y4" type="double"    default="1.0"/>
+			<component name="FEsize"  type="integer"    default="11"/>
+			<component name="DCsize"  type="integer"    default="11"/>
+			<component name="Geosize" type="integer"    default="21"/>
+			<component name="Geoptx1" type="double"    default="0.0"/>
+			<component name="Geopty1" type="double"    default="0.0"/>
+			<component name="Geoptx2" type="double"    default="1.0"/>
+			<component name="Geopty2" type="double"    default="0.0"/>
+			<component name="imax" type="integer"    default="41"/>
+			<component name="jmax" type="integer"    default="19"/>
+   </typedef>
+   <typedef name="setup_t">
+      <component name="Project" type="word" length="64" default="'2D_Grid_Generator'"/>
+      <component name="nmax"   type="integer" default="500"/>
+			<component name="iControl"  type="integer" default="0"/>
+			<component name="Cy" type="double" default="0.001"/>
+			<component name="RMSres" type="double" default="1.0e-8">
+	 </typedef>
+	 <typedef name="plot_t">
+					 <component name="iPost" type="integer" default="0"/>
+					 <component name="Method" type="word" length="64" default="'TecPlot'"/>
+					 <component name="files" type="word" length="64" default="'test.dat'"/>
+					 <component name="style" type="word" length="64" default="'+k r'"/>
+					 <component name="label" type="word" length="64" default="'Grid'"/>
+					 <component name="LegendFontSize" type="double" default="16"/>
+					 <component name="FigureSize" type="word" length="16" default="'10,7'"/>
+					 <component name="AxisLabelSize" type="double" default="22"/>
+					 <component name="AxisTitleSize" type="double" default="22"/>
+					 <component name="XTickSize" type="double" default="22"/>
+					 <component name="YTickSize" type="double" default="22"/>
+	 </typedef>
+	 <typedef name="PostProcessing_t">
+					 <component name="plot" type="plot_t"/>
+	 </typedef>
+	 <typedef name="input_type_t">
+					 <component name="geometry" type="geometry_t"/>
+					 <component name="setup"   type="setup_t"/>
+					 <component name="PostProcessing" type="PostProcessing_t"/>
+	 </typedef>
+   <variable name="input_data" type="input_type_t"/>
+</template>

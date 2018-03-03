@@ -1,0 +1,333 @@
+ XML_OPEN: opened file input_file.xml
+ at LU-number:          10
+ XML_GET - tag found: template
+ XML_GET - number of attributes:           0
+ XML_GET - number of data lines:           2
+ XML_GET - tag found: options
+ XML_GET - number of attributes:           3
+ XML_GET - number of data lines:           2
+ tag: options                                                                         
+ attribs:            3
+   strict = no
+   dynamicstrings = no
+   rootname = input_file
+ data:            2
+   ><
+   ><
+ XML_GET - tag found: typedef
+ XML_GET - number of attributes:           1
+ XML_GET - number of data lines:           2
+ tag: typedef                                                                         
+ attribs:            1
+   name = geometry_t
+ data:            2
+   ><
+   ><
+ XML_GET - tag found: component
+ XML_GET - number of attributes:           3
+ XML_GET - number of data lines:           2
+ tag: component                                                                       
+ attribs:            3
+   name = x1
+   type = double
+   default = -0.8
+ data:            2
+   ><
+   ><
+ XML_GET - tag found: component
+ XML_GET - number of attributes:           3
+ XML_GET - number of data lines:           2
+ tag: component                                                                       
+ attribs:            3
+   name = y1
+   type = double
+   default = 0.0
+ data:            2
+   ><
+   ><
+ XML_GET - tag found: component
+ XML_GET - number of attributes:           3
+ XML_GET - number of data lines:           2
+ tag: component                                                                       
+ attribs:            3
+   name = x2
+   type = double
+   default = 1.8
+ data:            2
+   ><
+   ><
+ XML_GET - tag found: component
+ XML_GET - number of attributes:           3
+ XML_GET - number of data lines:           2
+ tag: component                                                                       
+ attribs:            3
+   name = y2
+   type = double
+   default = 0.0
+ data:            2
+   ><
+   >			<
+ XML_GET - tag found: component
+ XML_GET - number of attributes:           3
+ XML_GET - number of data lines:           2
+ tag: component                                                                       
+ attribs:            3
+   name = x3
+   type = double
+   default = -0.8
+ data:            2
+   ><
+   >			<
+ XML_GET - tag found: component
+ XML_GET - number of attributes:           3
+ XML_GET - number of data lines:           2
+ tag: component                                                                       
+ attribs:            3
+   name = y3
+   type = double
+   default = 1.0
+ data:            2
+   ><
+   >			<
+ XML_GET - tag found: component
+ XML_GET - number of attributes:           3
+ XML_GET - number of data lines:           2
+ tag: component                                                                       
+ attribs:            3
+   name = x4
+   type = double
+   default = 1.8
+ data:            2
+   ><
+   >			<
+ XML_GET - tag found: component
+ XML_GET - number of attributes:           3
+ XML_GET - number of data lines:           2
+ tag: component                                                                       
+ attribs:            3
+   name = y4
+   type = double
+   default = 1.0
+ data:            2
+   ><
+   >			<
+ XML_GET - tag found: component
+ XML_GET - number of attributes:           3
+ XML_GET - number of data lines:           2
+ tag: component                                                                       
+ attribs:            3
+   name = FEsize
+   type = integer
+   default = 11
+ data:            2
+   ><
+   >			<
+ XML_GET - tag found: component
+ XML_GET - number of attributes:           3
+ XML_GET - number of data lines:           2
+ tag: component                                                                       
+ attribs:            3
+   name = DCsize
+   type = integer
+   default = 11
+ data:            2
+   ><
+   >			<
+ XML_GET - tag found: component
+ XML_GET - number of attributes:           3
+ XML_GET - number of data lines:           2
+ tag: component                                                                       
+ attribs:            3
+   name = Geosize
+   type = integer
+   default = 21
+ data:            2
+   ><
+   >			<
+ XML_GET - tag found: component
+ XML_GET - number of attributes:           3
+ XML_GET - number of data lines:           2
+ tag: component                                                                       
+ attribs:            3
+   name = Geoptx1
+   type = double
+   default = 0.0
+ data:            2
+   ><
+   >			<
+ XML_GET - tag found: component
+ XML_GET - number of attributes:           3
+ XML_GET - number of data lines:           2
+ tag: component                                                                       
+ attribs:            3
+   name = Geopty1
+   type = double
+   default = 0.0
+ data:            2
+   ><
+   >			<
+ XML_GET - tag found: component
+ XML_GET - number of attributes:           3
+ XML_GET - number of data lines:           2
+ tag: component                                                                       
+ attribs:            3
+   name = Geoptx2
+   type = double
+   default = 1.0
+ data:            2
+   ><
+   >			<
+ XML_GET - tag found: component
+ XML_GET - number of attributes:           3
+ XML_GET - number of data lines:           2
+ tag: component                                                                       
+ attribs:            3
+   name = Geopty2
+   type = double
+   default = 0.0
+ data:            2
+   ><
+   >			<
+ XML_GET - tag found: component
+ XML_GET - number of attributes:           3
+ XML_GET - number of data lines:           2
+ tag: component                                                                       
+ attribs:            3
+   name = imax
+   type = integer
+   default = 41
+ data:            2
+   ><
+   >			<
+ XML_GET - tag found: component
+ XML_GET - number of attributes:           3
+ XML_GET - number of data lines:           2
+ tag: component                                                                       
+ attribs:            3
+   name = jmax
+   type = integer
+   default = 19
+ data:            2
+   ><
+   ><
+ XML_GET - number of attributes:           0
+ XML_GET - number of data lines:           2
+ tag: typedef                                                                         
+ attribs:            0
+ data:            2
+   ><
+   ><
+ XML_GET - tag found: typedef
+ XML_GET - number of attributes:           1
+ XML_GET - number of data lines:           2
+ tag: typedef                                                                         
+ attribs:            1
+   name = setup_t
+ data:            2
+   ><
+   ><
+ XML_GET - tag found: component
+ XML_GET - number of attributes:           4
+ XML_GET - number of data lines:           2
+ tag: component                                                                       
+ attribs:            4
+   name = Project
+   type = word
+   length = 64
+   default = '2D_Grid_Generator'
+ data:            2
+   ><
+   ><
+ XML_GET - tag found: component
+ XML_GET - number of attributes:           3
+ XML_GET - number of data lines:           2
+ tag: component                                                                       
+ attribs:            3
+   name = nmax
+   type = integer
+   default = 500
+ data:            2
+   ><
+   >			<
+ XML_GET - tag found: component
+ XML_GET - number of attributes:           3
+ XML_GET - number of data lines:           2
+ tag: component                                                                       
+ attribs:            3
+   name = iControl
+   type = integer
+   default = 0
+ data:            2
+   ><
+   >			<
+ XML_GET - tag found: component
+ XML_GET - number of attributes:           3
+ XML_GET - number of data lines:           2
+ tag: component                                                                       
+ attribs:            3
+   name = Cy
+   type = double
+   default = 0.001
+ data:            2
+   ><
+   >	<
+ XML_GET - number of attributes:           0
+ XML_GET - number of data lines:           2
+ tag: typedef                                                                         
+ attribs:            0
+ data:            2
+   ><
+   >	<
+ XML_GET - tag found: typedef
+ XML_GET - number of attributes:           1
+ XML_GET - number of data lines:           2
+ tag: typedef                                                                         
+ attribs:            1
+   name = input_type_t
+ data:            2
+   ><
+   >					<
+ XML_GET - tag found: component
+ XML_GET - number of attributes:           2
+ XML_GET - number of data lines:           2
+ tag: component                                                                       
+ attribs:            2
+   name = geometry
+   type = geometry_t
+ data:            2
+   ><
+   >					<
+ XML_GET - tag found: component
+ XML_GET - number of attributes:           2
+ XML_GET - number of data lines:           2
+ tag: component                                                                       
+ attribs:            2
+   name = setup
+   type = setup_t
+ data:            2
+   ><
+   >	<
+ XML_GET - number of attributes:           0
+ XML_GET - number of data lines:           2
+ tag: typedef                                                                         
+ attribs:            0
+ data:            2
+   ><
+   ><
+ XML_GET - tag found: variable
+ XML_GET - number of attributes:           2
+ XML_GET - number of data lines:           2
+ tag: variable                                                                        
+ attribs:            2
+   name = input_data
+   type = input_type_t
+ data:            2
+   ><
+   ><
+ XML_GET - end of file found - LU-number:          10
+ XML_GET - number of attributes:           0
+ XML_GET - number of data lines:           1
+ tag: template                                                                        
+ attribs:            0
+ data:            1
+   ><

@@ -1,0 +1,51 @@
+\select@language {english}
+\contentsline {chapter}{\numberline {1}Contents}{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}Project Description}{3}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Given task}{3}{subsection.1.1.1}
+\contentsline {subsubsection}{Algebraic Grid}{4}{subsubsection*.3}
+\contentsline {subsubsection}{Elliptic Grid}{4}{subsubsection*.4}
+\contentsline {subsection}{\numberline {1.1.2}Deliverables}{5}{subsection.1.1.2}
+\contentsline {subsubsection}{Grid \#1}{5}{subsubsection*.5}
+\contentsline {subsubsection}{Grid \#2}{5}{subsubsection*.6}
+\contentsline {subsubsection}{Grid \#3}{5}{subsubsection*.7}
+\contentsline {subsubsection}{Grid \#4}{5}{subsubsection*.8}
+\contentsline {subsubsection}{Grid \#5}{5}{subsubsection*.9}
+\contentsline {section}{\numberline {1.2}Setup}{5}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Setting up a Grid}{5}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}Code Structure}{5}{subsection.1.2.2}
+\contentsline {subsection}{\numberline {1.2.3}Input File}{5}{subsection.1.2.3}
+\contentsline {subsection}{\numberline {1.2.4}Compilation}{6}{subsection.1.2.4}
+\contentsline {subsection}{\numberline {1.2.5}Results}{7}{subsection.1.2.5}
+\contentsline {section}{\numberline {1.3}Input File}{8}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}Structure of the Geometry Module}{8}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}Structure of Setup Module}{8}{subsection.1.3.2}
+\contentsline {subsection}{\numberline {1.3.3}Structure of Postprocessing Modules}{8}{subsection.1.3.3}
+\contentsline {section}{\numberline {1.4}Code development}{9}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}GridGen Code summary}{9}{subsection.1.4.1}
+\contentsline {subsection}{\numberline {1.4.2}Details of GridGen development}{9}{subsection.1.4.2}
+\contentsline {subsubsection}{Creation of algebraic grid points}{10}{subsubsection*.11}
+\contentsline {subsubsection}{Creaction of elliptic grid points}{11}{subsubsection*.12}
+\contentsline {subsubsection}{RMS residual}{12}{subsubsection*.13}
+\contentsline {section}{\numberline {1.5}GridPy}{12}{section.1.5}
+\contentsline {subsection}{\numberline {1.5.1}Compilation Options}{12}{subsection.1.5.1}
+\contentsline {subsubsection}{Configure}{13}{subsubsection*.14}
+\contentsline {subsubsection}{Compile}{13}{subsubsection*.15}
+\contentsline {subsection}{\numberline {1.5.2}Setting the path}{13}{subsection.1.5.2}
+\contentsline {subsection}{\numberline {1.5.3}Cleaning commands}{13}{subsection.1.5.3}
+\contentsline {subsection}{\numberline {1.5.4}Plotting Utility}{13}{subsection.1.5.4}
+\contentsline {subsubsection}{Options in the plotting module}{14}{subsubsection*.16}
+\contentsline {subsubsection}{Using the plotting module}{14}{subsubsection*.17}
+\contentsline {subsection}{\numberline {1.5.5}Documentation}{15}{subsection.1.5.5}
+\contentsline {subsubsection}{Building}{15}{subsubsection*.18}
+\contentsline {subsubsection}{Viewing}{15}{subsubsection*.19}
+\contentsline {subsubsection}{Cleaning}{16}{subsubsection*.20}
+\contentsline {subsubsection}{Closing Notes}{16}{subsubsection*.21}
+\contentsline {section}{\numberline {1.6}Evaluation Cases}{16}{section.1.6}
+\contentsline {subsection}{\numberline {1.6.1}Grid testcases}{16}{subsection.1.6.1}
+\contentsline {subsubsection}{2D Airfoil Grid Results Summary}{16}{subsubsection*.22}
+\contentsline {paragraph}{Grid \#1: Algebraic grid with non-clustered points in y}{16}{paragraph*.23}
+\contentsline {paragraph}{Grid \#2: Algebraic grid with clustered points in y}{17}{paragraph*.24}
+\contentsline {paragraph}{Grid \#3: Elliptic grid with clustered points in y \& no control terms}{18}{paragraph*.25}
+\contentsline {paragraph}{Grid \#4: Elliptic grid with clustered points in y \& control terms}{18}{paragraph*.26}
+\contentsline {paragraph}{Grid \#5: Improved elliptic grid}{20}{paragraph*.27}
+\contentsline {paragraph}{Residual Convergence}{22}{paragraph*.28}

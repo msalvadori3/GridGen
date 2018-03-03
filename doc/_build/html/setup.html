@@ -1,0 +1,274 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Setup &#8212; GridGen  documentation</title>
+    
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Input File" href="inputfile.html" />
+    <link rel="prev" title="Project Description" href="background.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="inputfile.html" title="Input File"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="background.html" title="Project Description"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GridGen  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Setup</a><ul>
+<li><a class="reference internal" href="#setting-up-a-grid">Setting up a Grid</a></li>
+<li><a class="reference internal" href="#code-structure">Code Structure</a></li>
+<li><a class="reference internal" href="#input-file">Input File</a></li>
+<li><a class="reference internal" href="#compilation">Compilation</a></li>
+<li><a class="reference internal" href="#results">Results</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="background.html"
+                        title="previous chapter">Project Description</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="inputfile.html"
+                        title="next chapter">Input File</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/setup.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="setup">
+<span id="setup-gridgen"></span><h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="setting-up-a-grid">
+<span id="id1"></span><h2>Setting up a Grid<a class="headerlink" href="#setting-up-a-grid" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="code-structure">
+<span id="structure"></span><h2>Code Structure<a class="headerlink" href="#code-structure" title="Permalink to this headline">¶</a></h2>
+<p>The <a href="#id4"><span class="problematic" id="id5">|GridGen|</span></a> code is divided into three major parts:</p>
+<ol class="arabic">
+<li><div class="first line-block">
+<div class="line"><strong>Input</strong>: User input is entered into a file called <code class="docutils literal"><span class="pre">input_file.xml</span></code>.</div>
+</div>
+</li>
+<li><div class="first line-block">
+<div class="line"><strong>Main Program</strong>: The main program for solving the elliptical grid is <code class="docutils literal"><span class="pre">gridgen.F90</span></code> in the <code class="docutils literal"><span class="pre">&lt;parent</span> <span class="pre">directory&gt;/src/main</span></code> folder.</div>
+</div>
+</li>
+<li><div class="first line-block">
+<div class="line"><strong>Output</strong>: Once the code is run, the results are stored in the <code class="docutils literal"><span class="pre">&lt;parent</span> <span class="pre">directory&gt;/output/</span></code> folder.</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="input-file">
+<span id="input"></span><h2>Input File<a class="headerlink" href="#input-file" title="Permalink to this headline">¶</a></h2>
+<p>The inputs for GridGenerator are specified in the <code class="docutils literal"><span class="pre">input_file.xml</span></code>. The input file is accessed as follows:</p>
+<ol class="arabic">
+<li><p class="first">Go to the parent directory:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ cd &lt;path to |GridGen|&gt;
+</pre></div>
+</div>
+<p>Make sure that you are in the directory that contains the files <strong class="command">setup.py</strong>, <strong class="command">input_file.xml</strong>, and the folder <strong class="command">src</strong>.</p>
+</li>
+<li><p class="first">Open the input file:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ vi input_file.xml
+</pre></div>
+</div>
+</li>
+<li><p class="first">The main parts of the input file are shown below</p>
+</li>
+</ol>
+<p>The input file is divided into different parts. The geometry is set in the <code class="docutils literal"><span class="pre">&lt;geometry&gt;</span></code> module, which is shown below:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;geometry&gt;</span>
+  <span class="nt">&lt;x1&gt;</span>-0.8<span class="nt">&lt;/x1&gt;</span>
+  <span class="nt">&lt;y1&gt;</span>0.0<span class="nt">&lt;/y1&gt;</span>
+  <span class="nt">&lt;x2&gt;</span>1.8<span class="nt">&lt;/x2&gt;</span>
+  <span class="nt">&lt;y2&gt;</span>0.0<span class="nt">&lt;/y2&gt;</span>
+  <span class="nt">&lt;x3&gt;</span>-0.8<span class="nt">&lt;/x3&gt;</span>
+  <span class="nt">&lt;y3&gt;</span>1.0<span class="nt">&lt;/y3&gt;</span>
+  <span class="nt">&lt;x4&gt;</span>1.8<span class="nt">&lt;/x4&gt;</span>
+  <span class="nt">&lt;y4&gt;</span>1.0<span class="nt">&lt;/y4&gt;</span>
+  <span class="nt">&lt;FEsize&gt;</span>11<span class="nt">&lt;/FEsize&gt;</span>
+  <span class="nt">&lt;DCsize&gt;</span>11<span class="nt">&lt;/DCsize&gt;</span>
+  <span class="nt">&lt;Geosize&gt;</span>21<span class="nt">&lt;/Geosize&gt;</span>
+  <span class="nt">&lt;Geoptx1&gt;</span>0.0<span class="nt">&lt;/Geoptx1&gt;</span>
+  <span class="nt">&lt;Geopty1&gt;</span>0.0<span class="nt">&lt;/Geopty1&gt;</span>
+  <span class="nt">&lt;Geoptx2&gt;</span>1.0<span class="nt">&lt;/Geoptx2&gt;</span>
+  <span class="nt">&lt;Geopty2&gt;</span>0.0<span class="nt">&lt;/Geopty2&gt;</span>
+  <span class="nt">&lt;imax&gt;</span>41<span class="nt">&lt;/imax&gt;</span>
+  <span class="nt">&lt;jmax&gt;</span>19<span class="nt">&lt;/jmax&gt;</span>
+<span class="nt">&lt;/geometry&gt;</span>
+</pre></div>
+</div>
+<p>For setup of the solver, most of the inputs are set in the <code class="docutils literal"><span class="pre">&lt;setup&gt;</span></code> module. A  snippet of this module is shown below:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;setup&gt;</span>
+  <span class="nt">&lt;Project&gt;</span>2D_Grid_Generator<span class="nt">&lt;/Project&gt;</span>
+  <span class="nt">&lt;nmax&gt;</span>500<span class="nt">&lt;/nmax&gt;</span>
+  <span class="nt">&lt;iControl&gt;</span>1<span class="nt">&lt;/iControl&gt;</span>
+  <span class="nt">&lt;Cy&gt;</span>2.0<span class="nt">&lt;/Cy&gt;</span>
+  <span class="nt">&lt;RMSres&gt;</span>1.0e-6<span class="nt">&lt;/RMSres&gt;</span>
+<span class="nt">&lt;/setup&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="compilation">
+<span id="id2"></span><h2>Compilation<a class="headerlink" href="#compilation" title="Permalink to this headline">¶</a></h2>
+<p>The following sequence of commands is used to compile a single simulation.</p>
+<ol class="arabic">
+<li><p class="first">Go to the parent directory:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ cd &lt;path to |GridGen|&gt;
+</pre></div>
+</div>
+<p>Make sure that you are in the directory that contains the files <strong class="command">setup.py</strong>, <strong class="command">input_file.xml</strong>, and the folder <strong class="command">src</strong>.</p>
+</li>
+<li><p class="first">Clean existing results:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ ./setup.py -u clean heavy
+</pre></div>
+</div>
+<p>This command removes the existing files in the output folder <code class="docutils literal"><span class="pre">|GridGen|/output/</span></code> and deletes the object files from previous compilations. <strong>Backup any required results before using this command.</strong></p>
+</li>
+<li><p class="first">Set working directory path:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ ./setup.py -u set_path
+</pre></div>
+</div>
+<p>This command sets the working directory path</p>
+</li>
+<li><p class="first">Set the output directory:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ ./setup.py -u create_subdirectories
+</pre></div>
+</div>
+</li>
+<li><p class="first">Compile the build:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ ./setup.py -e configure
+</pre></div>
+</div>
+<p>An empty CMake window opens. Press <code class="xref py py-class docutils literal"><span class="pre">[c]</span></code> on the keyboard to configure the program.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>This brings up the CMake window. There are two options for the <strong class="command">CMAKE_BUILD_TYPE</strong> :</dt>
+<dd><ul class="first last simple">
+<li><code class="xref py py-class docutils literal"><span class="pre">Release</span></code>: This compiles the program in regular mode; debugging flags are disabled.</li>
+<li><code class="xref py py-class docutils literal"><span class="pre">Debug</span></code>:   This compiles the program in debug mode; errors and warnings are displayed on the terminal.</li>
+</ul>
+</dd>
+</dl>
+<p>Press <code class="xref py py-class docutils literal"><span class="pre">[Enter]</span></code> on the keyboard to edit the option (to change from <code class="xref py py-class docutils literal"><span class="pre">Release</span></code> to <code class="xref py py-class docutils literal"><span class="pre">Debug</span></code> or vice versa)</p>
+<p>The file <strong class="command">grid.x</strong> will now be generated in the parent directory</p>
+</div></blockquote>
+</li>
+<li><p class="first">Execute the program:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ ./grid.x
+</pre></div>
+</div>
+<p>This command runs the program. If Debug mode is enabled in <strong class="command">GRIDGEN_COMPILE_DEFS</strong>, appropriate output is printed on the Terminal screen.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="results">
+<span id="id3"></span><h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
+<p>The results are stored in the <code class="docutils literal"><span class="pre">output/</span></code> folder inside the parent directory. The output directory contains several files <strong>.dat</strong> and <strong>.tec</strong> where the calculations are written. In addition, there is also a <code class="docutils literal"><span class="pre">output/plot</span></code> folder, where figures from the calculated data are plotted. To plot the results. open the inputfile and enter the name of the <strong>.dat</strong> file that was generated in the <code class="docutils literal"><span class="pre">files</span></code> entry (as shown below).</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;PostProcessing&gt;</span>
+    <span class="nt">&lt;plot&gt;</span>
+       <span class="nt">&lt;files&gt;</span>RESULTDATFILE<span class="nt">&lt;/files&gt;</span>
+       ...
+    <span class="nt">&lt;/plot&gt;</span>
+<span class="nt">&lt;/PostProcessing&gt;</span>
+</pre></div>
+</div>
+<p>Then, from the parent directory execute the following command to plot the results using <a href="#id6"><span class="problematic" id="id7">|GridGen|</span></a>’s inbuilt plotting utility:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ ./setup.py -p single_plot
+</pre></div>
+</div>
+<p>This will generate the RMS line plots from the results, which will be stored in the <code class="docutils literal"><span class="pre">output/plot</span></code> folder.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="inputfile.html" title="Input File"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="background.html" title="Project Description"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GridGen  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Marc Salvadori.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.1.
+    </div>
+  </body>
+</html>

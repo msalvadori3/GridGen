@@ -1,0 +1,171 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Documentaion for Elliptic Grid Generation &#8212; GridGen  documentation</title>
+    
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Project Description" href="background.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="background.html" title="Project Description"
+             accesskey="N">next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">GridGen  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="#">
+              <img class="logo" src="_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Documentaion for Elliptic Grid Generation</a></li>
+<li><a class="reference internal" href="#contents">Contents</a></li>
+</ul>
+
+  <h4>Next topic</h4>
+  <p class="topless"><a href="background.html"
+                        title="next chapter">Project Description</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="documentaion-for-elliptic-grid-generation">
+<h1>Documentaion for Elliptic Grid Generation<a class="headerlink" href="#documentaion-for-elliptic-grid-generation" title="Permalink to this headline">¶</a></h1>
+<p>Author: Marc Salvadori</p>
+<p>Email: <a class="reference external" href="mailto:msalvadori3&#37;&#52;&#48;gatech&#46;edu">msalvadori3<span>&#64;</span>gatech<span>&#46;</span>edu</a></p>
+<p>The basic idea behind grid generation is the creation of the transformation laws between the physical space and the computational space. The different techniques to generate a grid can be summarized in the following diagram.</p>
+<img alt="_images/grid_diagram.png" class="align-center" src="_images/grid_diagram.png" style="width: 633.0px; height: 535.5px;" />
+<p>Elliptic grid generation is one of several methods used to generate structured grids for complex geometries. Algebraic methods are one commonly used alternative, and hyperbolic systems of equations are sometimes used, particularly for external flows. In this project it is required solve a pair of Laplace/Poisson equations to generate the mesh. Rather than work in the physical domain where the geometry is complicated and the equations are simple, we prefer to work in the computational domain where just the opposite is true. Once we have done our work in the computational domain, we bring the results back to the physical domain for viewing.</p>
+<p>The overall procedure to generate a grid is as follows:</p>
+<ol class="arabic simple">
+<li>Establish the transformation relations between the physical space and the computational space.</li>
+<li>Transform the governing equations and the boundary conditions into the computational space.</li>
+<li>Solve the equations in the computational space using the uniformly spaced rectangular grid.</li>
+<li>Perform a reverse transformation to represent the flow properties in the physical space.</li>
+</ol>
+</div>
+<div class="section" id="contents">
+<h1>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="background.html">Project Description</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="background.html#given-task">Given task</a></li>
+<li class="toctree-l2"><a class="reference internal" href="background.html#deliverables">Deliverables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="setup.html#setting-up-a-grid">Setting up a Grid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup.html#code-structure">Code Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup.html#input-file">Input File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup.html#compilation">Compilation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup.html#results">Results</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="inputfile.html">Input File</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="inputfile.html#structure-of-the-geometry-module">Structure of the Geometry Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputfile.html#structure-of-setup-module">Structure of Setup Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputfile.html#structure-of-postprocessing-modules">Structure of Postprocessing Modules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="devel.html">Code development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="devel.html#gridgen-code-summary">GridGen Code summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="devel.html#details-of-gridgen-development">Details of GridGen development</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gridpy.html">GridPy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gridpyfiles/compile.html">Compilation Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gridpyfiles/compile.html#setting-the-path">Setting the path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gridpyfiles/compile.html#cleaning-commands">Cleaning commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gridpyfiles/plot.html">Plotting Utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gridpyfiles/documentation.html">Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="testcases.html">Evaluation Cases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="testcases.html#grid-testcases">Grid testcases</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="background.html" title="Project Description"
+             >next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">GridGen  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Marc Salvadori.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.1.
+    </div>
+  </body>
+</html>

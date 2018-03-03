@@ -1,0 +1,216 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Plotting Utility &#8212; GridGen  documentation</title>
+    
+    <link rel="stylesheet" href="../_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Documentation" href="documentation.html" />
+    <link rel="prev" title="Compilation Options" href="compile.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="documentation.html" title="Documentation"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="compile.html" title="Compilation Options"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GridGen  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../gridpy.html" accesskey="U">GridPy</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Plotting Utility</a><ul>
+<li><a class="reference internal" href="#options-in-the-plotting-module">Options in the plotting module</a></li>
+<li><a class="reference internal" href="#using-the-plotting-module">Using the plotting module</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="compile.html"
+                        title="previous chapter">Compilation Options</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="documentation.html"
+                        title="next chapter">Documentation</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/gridpyfiles/plot.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="plotting-utility">
+<span id="plot"></span><h1>Plotting Utility<a class="headerlink" href="#plotting-utility" title="Permalink to this headline">¶</a></h1>
+<p><a href="#id1"><span class="problematic" id="id2">|GridGen|</span></a> has a builtin plotting utility that allows for plotting of the generated data without the use of external tools. Similar to all the other features, the plotting utility is also accessed through the input file, which is accessed as follows.</p>
+<ol class="arabic">
+<li><p class="first">Go to the parent directory:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ cd &lt;path to |GridGen|&gt;
+</pre></div>
+</div>
+<p>Make sure that you are in the directory that contains the files <strong class="command">setup.py</strong>, <strong class="command">input_file.xml</strong>, and the folder <strong class="command">src</strong>.</p>
+</li>
+<li><p class="first">Open the input file:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ vi input_file.xml
+</pre></div>
+</div>
+</li>
+</ol>
+<p>The section of the inputfile devoted to post-processing is shown below:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;PostProcessing&gt;</span>
+  <span class="nt">&lt;plot&gt;</span>
+    <span class="nt">&lt;iPost&gt;</span>1<span class="nt">&lt;/iPost&gt;</span>
+    <span class="nt">&lt;Method&gt;</span>TecPlot<span class="nt">&lt;/Method&gt;</span>
+    <span class="nt">&lt;files&gt;</span>file1.dat<span class="nt">&lt;/files&gt;</span>
+    <span class="nt">&lt;style&gt;</span>k +r -c :g -.y --m<span class="nt">&lt;/style&gt;</span>
+    <span class="nt">&lt;label&gt;</span>Var1<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;LegendFontSize&gt;</span>16<span class="nt">&lt;/LegendFontSize&gt;</span>
+    <span class="nt">&lt;FigureSize&gt;</span>10 7<span class="nt">&lt;/FigureSize&gt;</span>
+    <span class="nt">&lt;AxisLabelSize&gt;</span>21<span class="nt">&lt;/AxisLabelSize&gt;</span>
+    <span class="nt">&lt;AxisTitleSize&gt;</span>22<span class="nt">&lt;/AxisTitleSize&gt;</span>
+    <span class="nt">&lt;XTickSize&gt;</span>23<span class="nt">&lt;/XTickSize&gt;</span>
+    <span class="nt">&lt;YTickSize&gt;</span>24<span class="nt">&lt;/YTickSize&gt;</span>
+  <span class="nt">&lt;/plot&gt;</span>
+<span class="nt">&lt;/PostProcessing&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Before running the plotting tool it is required to run create the subdirectory output.</p>
+</div>
+<div class="section" id="options-in-the-plotting-module">
+<h2>Options in the plotting module<a class="headerlink" href="#options-in-the-plotting-module" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>The data files generated from a <a href="#id3"><span class="problematic" id="id4">|GridGen|</span></a> run (or any external data file) is placed in the <strong class="command">output</strong> folder. The name of the file should not have any spaces or special characters (like colon :, quotation marks “” or ”, brackets or parenthesis () [] etc). The file name is entered into the <code class="docutils literal"><span class="pre">&lt;files&gt;</span></code> field in the input file. If there are more than 1 file, they are entered one after another.</li>
+<li>The <code class="docutils literal"><span class="pre">&lt;style&gt;</span></code> entry refers to the line style and color used. There are seven available colors in Python by default: RGBCMYK (Red, Green, Blue, Cyan, Magenta, Yellow and Black). Markers can be placed on the lines using the marker symbols (eg. <code class="docutils literal"><span class="pre">+r</span></code> generates a red line with + shaped markers). Line styles can also be changed using appropriate symbols (eg. <code class="docutils literal"><span class="pre">--m</span></code> generates a dashed magenta line, while <code class="docutils literal"><span class="pre">-.y</span></code> generates a dot-dashed yellow line).</li>
+<li>The <code class="docutils literal"><span class="pre">&lt;label&gt;</span></code> entry is to populate the legend. If there are N files for N different variables, then the legend is populated according to the entries in this field.</li>
+<li>The remaining entries are to adjust the figure parameters, like font size and figure size.</li>
+</ol>
+</div>
+<div class="section" id="using-the-plotting-module">
+<h2>Using the plotting module<a class="headerlink" href="#using-the-plotting-module" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Enter the names of the data files in the input file</p>
+</li>
+<li><p class="first">Set the required number of legend entries and line styles, depending on  how many files/variables are being plotted.</p>
+</li>
+<li><p class="first">Adjust any other plot parameters as required.</p>
+</li>
+<li><p class="first">The plotting module also provides a generalized feature to make plots from input data. This feature is also accessed through the <code class="docutils literal"><span class="pre">input_file.xml</span></code>. The input data (.dat) files are entered in the <code class="docutils literal"><span class="pre">files</span></code> section of the input file. The plotting utility is then accessed using the command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ ./setup.py -p single_plot options &quot;{&lt;plot options&gt;}&quot;
+</pre></div>
+</div>
+</li>
+</ol>
+<blockquote>
+<div><p>An example of this input for the plotting utility is:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ ./setup.py -p single_plot options &quot;{&#39;title&#39;:[&#39;RMS Residual for Grid#5&#39;],
+  &#39;xlabel&#39;:[&#39;Number of Iterations&#39;],&#39;ylabel&#39;:[&#39;RMS&#39;],
+  &#39;grid&#39;:[&#39;on&#39;],&#39;legend&#39;:[&#39;False&#39;],&#39;legend_frame&#39;:[&#39;True&#39;],
+  &#39;legend_loc&#39;:[&#39;lower right&#39;]}&quot;
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>The options give flexibility to set the graph title, the labels for the axes, select the columns of data from the input .dat file that we want to plot, set the legend properties, etc.</dt>
+<dd><p class="first">Note that if no options are provided as in the example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ ./setup.py -p single_plot options
+</pre></div>
+</div>
+<p class="last">default options wil be used for the picture name and axes/title labels.
+Note that the file and picture options must be provided in the input file,
+in the <code class="docutils literal"><span class="pre">&lt;PostProcessing&gt;</span></code> section.</p>
+</dd>
+</dl>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The above command is meant to be used with a generic .dat file, without header, where data is distributed column-wise.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="documentation.html" title="Documentation"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="compile.html" title="Compilation Options"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GridGen  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../gridpy.html" >GridPy</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Marc Salvadori.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.1.
+    </div>
+  </body>
+</html>

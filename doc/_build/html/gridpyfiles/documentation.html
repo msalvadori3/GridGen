@@ -1,0 +1,167 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Documentation &#8212; GridGen  documentation</title>
+    
+    <link rel="stylesheet" href="../_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Evaluation Cases" href="../testcases.html" />
+    <link rel="prev" title="Plotting Utility" href="plot.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../testcases.html" title="Evaluation Cases"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="plot.html" title="Plotting Utility"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GridGen  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../gridpy.html" accesskey="U">GridPy</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Documentation</a><ul>
+<li><a class="reference internal" href="#building">Building</a></li>
+<li><a class="reference internal" href="#viewing">Viewing</a></li>
+<li><a class="reference internal" href="#cleaning">Cleaning</a></li>
+<li><a class="reference internal" href="#closing-notes">Closing Notes</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="plot.html"
+                        title="previous chapter">Plotting Utility</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../testcases.html"
+                        title="next chapter">Evaluation Cases</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/gridpyfiles/documentation.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="documentation">
+<span id="id1"></span><h1>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h1>
+<p>The <a href="#id2"><span class="problematic" id="id3">|GridGen|</span></a> documentation is written using restructured text (reST) Sphinx, and can be manipulated using python routines in Gridpy.</p>
+<div class="section" id="building">
+<h2>Building<a class="headerlink" href="#building" title="Permalink to this headline">¶</a></h2>
+<p>The documentation can be built using the command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ ./setup.py -u doc build
+</pre></div>
+</div>
+<p>This runs Sphinx in the documentation directory, and creates the html files using a make command. The command runs Sphinx twice to make sure references are interlinked properly.</p>
+</div>
+<div class="section" id="viewing">
+<h2>Viewing<a class="headerlink" href="#viewing" title="Permalink to this headline">¶</a></h2>
+<p>This command is used for viewing the documentation. It is only available after running the build command above, so that the documentation is created. The documentation can be opened using the command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ ./setup.py -u doc open
+</pre></div>
+</div>
+<p>The documentation requires a compatible version of a web broswer (preferably Google Chrome or Mozilla Firefox). If a compatible browser is installed, the documentation will open when the above command is executed. Otherwise, an error message will be displayed. In case an error message is displayed, the documentation can manually be opened on a web browser from the directory <strong>&lt;GridGen parent directory&gt;/doc/_build/html/index.html</strong></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If using MAC OS X please be aware to simply run $ open <strong>&lt;GridGen parent directory&gt;/doc/_build/html/index.html</strong> from the terminal.</p>
+</div>
+</div>
+<div class="section" id="cleaning">
+<h2>Cleaning<a class="headerlink" href="#cleaning" title="Permalink to this headline">¶</a></h2>
+<p>The built documentation can be cleaned (i.e. all the compiled files can be deleted while retaining the source content) using the command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ ./setup.py -u doc clean
+</pre></div>
+</div>
+</div>
+<div class="section" id="closing-notes">
+<h2>Closing Notes<a class="headerlink" href="#closing-notes" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>As with any browser-based content, the appearance of the content is dependent on the capability of the browser to render the elements on the webpage. Depending on the bworser present on the machine, the content may appear different.</li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../testcases.html" title="Evaluation Cases"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="plot.html" title="Plotting Utility"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GridGen  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../gridpy.html" >GridPy</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Marc Salvadori.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.1.
+    </div>
+  </body>
+</html>
